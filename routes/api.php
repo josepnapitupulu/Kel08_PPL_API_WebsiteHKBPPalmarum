@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/rpp', [RPPController::class, 'viewAllRpp']);
-Route::get('/rpp/{id}', [RPPController::class, 'viewRPPById']);
+Route::get('rpp/{id}', [RPPController::class, 'viewRPPById']);
+Route::get('/deleteRpp/{id}', [RPPController::class, 'deleteRPP']);
 
 

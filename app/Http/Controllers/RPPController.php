@@ -1,10 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Helpers\ApiFormatter;
-use Illuminate\Support\Facades\DB;
 use Exception;
 use Illuminate\Http\Request;
+use App\Helpers\ApiFormatter;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class RPPController extends Controller
 {
@@ -26,10 +27,21 @@ class RPPController extends Controller
     }
 
     public function viewRPPById($id){
-        $rpp = DB::select('CALL viewAllRPP(?)',[$id]);
+        $rpp = DB::select('CALL viewRPPById(?)',[$id]);
 
         if($rpp){
             return ApiFormatter::createApi('200', 'Success', $rpp);
+        }else{
+            return ApiFormatter::createApi('400', 'Failed');
+        }
+    }
+
+    public function deleteRPP($id){
+        
+        $data = DB::select('deleteRPP(?)',[$id]);
+
+        if($data){
+            return ApiFormatter::createApi('200', 'Success');
         }else{
             return ApiFormatter::createApi('400', 'Failed');
         }
