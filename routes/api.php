@@ -1,9 +1,14 @@
 <?php
 
+<<<<<<< HEAD
 use App\Http\Controllers\RPPController;
 use App\Http\Controllers\PelayanController;
+=======
+>>>>>>> b6c9e0a89377b7fe2645f30487b85f88e9a995b5
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RPPController;
+use App\Http\Controllers\userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +40,20 @@ Route::post('/updateRpp', [PelayanController::class, 'updatePelayan']);
 
 
 
+
+Route::post('/daftarBaptis', [userController::class, 'daftarBaptis']);
+Route::post('/daftarSidi', [userController::class, 'daftarSidi']);
+Route::post('/daftarJemaat', [userController::class, 'daftarJemaat']);
+Route::post('/daftarNikah', [userController::class, 'daftarNikah']);
+Route::post('/daftarMartumpol', [userController::class, 'daftarMartumpol']);
+Route::post('/daftarPindah', [userController::class, 'daftarPindah']);
+Route::get('/keluarga', [userController::class, 'keluarga']);
+Route::get('/pendidikan', [userController::class, 'pendidikan']);
+Route::get('/BidangPendidikan', [userController::class, 'BidangPendidikan']);
+Route::get('/pekerjaan', [userController::class, 'pekerjaan']);
+Route::get('/jemaat', [userController::class, 'jemaat']);
+Route::get('/namKeluarga', [userController::class, 'namKeluarga']);
+Route::get('/gereja', [userController::class, 'gereja']);
+Route::get('/pelayan', [userController::class, 'pelayan']);
+Route::get('/jadwal', [userController::class, 'jadwal']);
 
