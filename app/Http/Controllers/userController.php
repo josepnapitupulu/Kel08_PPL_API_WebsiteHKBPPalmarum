@@ -414,10 +414,11 @@ class userController extends Controller
 
     public function pelayan()
     {
-        $data = DB::table('pelayan_gereja')->get();
-        return response()->json($data);
+        // $data = DB::table('pelayan_gereja')->get();
+        $result = DB::select('CALL viewAllPelayan()');
+        return response()->json($result);
 
-        if($data){
+        if($result){
             return ApiFormatter::createApi(200, 'Success', $data);
         }else{
             return ApiFormatter::createApi(400, 'Failed');
@@ -427,6 +428,18 @@ class userController extends Controller
     public function jadwal()
     {
         $data = DB::table('jadwal_ibadah')->get();
+        return response()->json($data);
+
+        if($data){
+            return ApiFormatter::createApi(200, 'Success', $data);
+        }else{
+            return ApiFormatter::createApi(400, 'Failed');
+        }
+    }
+
+    public function kegiatan()
+    {
+        $data = DB::table('jenis_kegiatan')->get();
         return response()->json($data);
 
         if($data){

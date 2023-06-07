@@ -40,4 +40,5 @@ Route::get('/namKeluarga', [userController::class, 'namKeluarga']);
 Route::get('/gereja', [userController::class, 'gereja']);
 Route::get('/pelayan', [userController::class, 'pelayan']);
 Route::get('/jadwal', [userController::class, 'jadwal']);
+Route::get('/kegiatan', [userController::class, 'kegiatan']);
 
