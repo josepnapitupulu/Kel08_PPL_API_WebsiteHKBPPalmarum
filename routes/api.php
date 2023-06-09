@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RPPController;
 use App\Http\Controllers\PelayanController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\uproveController;
+use App\Http\Controllers\PelayanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,4 +56,25 @@ Route::get('/namKeluarga', [userController::class, 'namKeluarga']);
 Route::get('/gereja', [userController::class, 'gereja']);
 Route::get('/pelayan', [userController::class, 'pelayan']);
 Route::get('/jadwal', [userController::class, 'jadwal']);
+Route::get('/kegiatan', [userController::class, 'kegiatan']);
+Route::get('/pemasukan', [userController::class, 'pemasukan']);
+Route::get('/pengeluaran', [userController::class, 'pengeluaran']);
 
+
+Route::put('/uproveBaptis/{id}', [uproveController::class, 'statusBaptis']);
+Route::get('/baptis', [uproveController::class, 'baptis']);
+
+Route::put('/uproveSidi/{id}', [uproveController::class, 'statusSidi']);
+Route::get('/sidi', [uproveController::class, 'sidi']);
+
+Route::put('/uprovePindah/{id}', [uproveController::class, 'statusPindah']);
+Route::get('/pindah', [uproveController::class, 'pindah']);
+
+Route::put('/uproveJemaat/{id}', [uproveController::class, 'statusJemaat']);
+Route::get('/prvJemaat', [uproveController::class, 'prvJemaat']);
+
+Route::put('/uproveNikah/{id}', [uproveController::class, 'statusNikah']);
+Route::get('/nikah', [uproveController::class, 'nikah']);
+
+Route::put('/uproveMartumpol/{id}', [uproveController::class, 'statusMartumpol']);
+Route::get('/martumpol', [uproveController::class, 'martumpol']);
