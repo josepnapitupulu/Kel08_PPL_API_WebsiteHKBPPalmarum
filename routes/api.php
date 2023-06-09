@@ -1,13 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-use App\Http\Controllers\RPPController;
-use App\Http\Controllers\PelayanController;
-=======
->>>>>>> b6c9e0a89377b7fe2645f30487b85f88e9a995b5
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RPPController;
+use App\Http\Controllers\PelayanController;
 use App\Http\Controllers\userController;
 
 /*
@@ -27,16 +23,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/rpp', [RPPController::class, 'viewAllRpp']);
 Route::get('rpp/{id}', [RPPController::class, 'viewRPPById']);
+Route::get('rppEdit/{id}', [RPPController::class, 'viewEditRPP']);
 Route::get('/deleteRpp/{id}', [RPPController::class, 'deleteRPP']);
 Route::post('/storeRpp', [RPPController::class, 'addRPP']);
-Route::post('/updateRpp', [RPPController::class, 'updateRPP']);
+Route::put('/updateRpp/{id}', [RPPController::class, 'updateRPP']);
 
 
 Route::get('/pelayan', [PelayanController::class, 'viewAllPelayan']);
 Route::get('/deletePelayan/{id}', [PelayanController::class, 'deleteRPP']);
 Route::get('pelayan/{id}', [PelayanController::class, 'viewPelayanById']);
 Route::post('/storePelayan', [PelayanController::class, 'addPelayan']);
-Route::post('/updateRpp', [PelayanController::class, 'updatePelayan']);
+Route::put('/updateRpp', [PelayanController::class, 'updatePelayan']);
 
 
 
