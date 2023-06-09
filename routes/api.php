@@ -1,14 +1,11 @@
 <?php
 
-<<<<<<< HEAD
-use App\Http\Controllers\RPPController;
-use App\Http\Controllers\PelayanController;
-=======
->>>>>>> b6c9e0a89377b7fe2645f30487b85f88e9a995b5
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RPPController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\SetSentralisasiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -56,4 +53,16 @@ Route::get('/namKeluarga', [userController::class, 'namKeluarga']);
 Route::get('/gereja', [userController::class, 'gereja']);
 Route::get('/pelayan', [userController::class, 'pelayan']);
 Route::get('/jadwal', [userController::class, 'jadwal']);
+
+
+////////////////////////// API KEUANGAN ///////////////////////////
+
+// SENTRALISASI
+Route::get('/setSentralisasi', [SetSentralisasiController::class, 'viewAllSetSentralisasi']);
+Route::get('/setSentralisasi/{id}', [SetSentralisasiController::class, 'viewSetSentralisasiById']);
+Route::delete('/setSentralisasi/{id}', [SetSentralisasiController::class, 'deleteSetSentralisasi']);
+Route::post('/storeSentralisasi', [SetSentralisasiController::class, 'storeSentralisasi']);
+Route::put('/ubahSentralisasi/{id}', [SetSentralisasiController::class, 'ubahSentralisasi']);
+
+// Route::get('/setSentralisasi', [SetSentralisasiController::class, 'detailSentralisasi']);
 
