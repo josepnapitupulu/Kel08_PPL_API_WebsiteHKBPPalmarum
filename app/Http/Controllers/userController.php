@@ -448,4 +448,28 @@ class userController extends Controller
             return ApiFormatter::createApi(400, 'Failed');
         }
     }
+
+    public function pemasukan()
+    {
+        $data = DB::table('pemasukan')->get();
+        return response()->json($data);
+
+        if($data){
+            return ApiFormatter::createApi(200, 'Success', $data);
+        }else{
+            return ApiFormatter::createApi(400, 'Failed');
+        }
+    }
+
+    public function pengeluaran()
+    {
+        $data = DB::table('pengeluaran')->get();
+        return response()->json($data);
+
+        if($data){
+            return ApiFormatter::createApi(200, 'Success', $data);
+        }else{
+            return ApiFormatter::createApi(400, 'Failed');
+        }
+    }
 }
