@@ -6,13 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RPPController;
 use App\Http\Controllers\PelayanController;
 use App\Http\Controllers\userController;
-<<<<<<< HEAD
 use App\Http\Controllers\SetSentralisasiController;
 
-=======
 use App\Http\Controllers\uproveController;
-use App\Http\Controllers\PelayanController;
->>>>>>> 48f1d2c094301debb10fd1430c83036a46ed3624
 
 /*
 |--------------------------------------------------------------------------
@@ -66,7 +62,6 @@ Route::get('/pemasukan', [userController::class, 'pemasukan']);
 Route::get('/pengeluaran', [userController::class, 'pengeluaran']);
 
 
-<<<<<<< HEAD
 ////////////////////////// API KEUANGAN ///////////////////////////
 
 // SENTRALISASI
@@ -78,7 +73,6 @@ Route::put('/ubahSentralisasi/{id}', [SetSentralisasiController::class, 'ubahSen
 
 // Route::get('/setSentralisasi', [SetSentralisasiController::class, 'detailSentralisasi']);
 
-=======
 Route::put('/uproveBaptis/{id}', [uproveController::class, 'statusBaptis']);
 Route::get('/baptis', [uproveController::class, 'baptis']);
 
@@ -96,4 +90,3 @@ Route::get('/nikah', [uproveController::class, 'nikah']);
 
 Route::put('/uproveMartumpol/{id}', [uproveController::class, 'statusMartumpol']);
 Route::get('/martumpol', [uproveController::class, 'martumpol']);
->>>>>>> 48f1d2c094301debb10fd1430c83036a46ed3624
