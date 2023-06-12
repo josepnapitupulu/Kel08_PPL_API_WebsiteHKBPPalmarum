@@ -4,9 +4,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RPPController;
-use App\Http\Controllers\userController;
-use App\Http\Controllers\uproveController;
 use App\Http\Controllers\PelayanController;
+use App\Http\Controllers\userController;
+use App\Http\Controllers\SetSentralisasiController;
+
+use App\Http\Controllers\uproveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,14 +30,18 @@ Route::get('rpp/{id}', [RPPController::class, 'viewRPPById']);
 Route::get('rppEdit/{id}', [RPPController::class, 'viewEditRPP']);
 Route::get('/deleteRpp/{id}', [RPPController::class, 'deleteRPP']);
 Route::post('/storeRpp', [RPPController::class, 'addRPP']);
+<<<<<<< HEAD
 Route::put('/updateRpp', [RPPController::class, 'updateRPP']);
+=======
+Route::put('/updateRpp/{id}', [RPPController::class, 'updateRPP']);
+>>>>>>> 933d21a6445b56f4b86265daadb797f21c6c05d7
 
 
 Route::get('/pelayan', [PelayanController::class, 'viewAllPelayan']);
 Route::get('/deletePelayan/{id}', [PelayanController::class, 'deleteRPP']);
 Route::get('pelayan/{id}', [PelayanController::class, 'viewPelayanById']);
 Route::post('/storePelayan', [PelayanController::class, 'addPelayan']);
-Route::post('/updateRpp', [PelayanController::class, 'updatePelayan']);
+Route::put('/updateRpp', [PelayanController::class, 'updatePelayan']);
 
 
 
@@ -59,6 +65,17 @@ Route::get('/kegiatan', [userController::class, 'kegiatan']);
 Route::get('/pemasukan', [userController::class, 'pemasukan']);
 Route::get('/pengeluaran', [userController::class, 'pengeluaran']);
 
+
+////////////////////////// API KEUANGAN ///////////////////////////
+
+// SENTRALISASI
+Route::get('/setSentralisasi', [SetSentralisasiController::class, 'viewAllSetSentralisasi']);
+Route::get('/setSentralisasi/{id}', [SetSentralisasiController::class, 'viewSetSentralisasiById']);
+Route::delete('/setSentralisasi/{id}', [SetSentralisasiController::class, 'deleteSetSentralisasi']);
+Route::post('/storeSentralisasi', [SetSentralisasiController::class, 'storeSentralisasi']);
+Route::put('/ubahSentralisasi/{id}', [SetSentralisasiController::class, 'ubahSentralisasi']);
+
+// Route::get('/setSentralisasi', [SetSentralisasiController::class, 'detailSentralisasi']);
 
 Route::put('/uproveBaptis/{id}', [uproveController::class, 'statusBaptis']);
 Route::get('/baptis', [uproveController::class, 'baptis']);

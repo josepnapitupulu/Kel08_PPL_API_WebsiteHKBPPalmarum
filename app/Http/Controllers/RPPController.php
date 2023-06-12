@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Exception;
@@ -100,5 +101,8 @@ class RPPController extends Controller
             return ApiFormatter::createApi('400', 'Failed');
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 933d21a6445b56f4b86265daadb797f21c6c05d7
 }
