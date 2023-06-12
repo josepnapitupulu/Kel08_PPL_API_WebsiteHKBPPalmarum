@@ -45,18 +45,27 @@ class RPPController extends Controller
     public function updateRPP(Request $request){
         try {
             $id_rpp = $request->input('id_rpp');
-            $jemaat = $request->input('id_jemaat');
-            $jenis_rpp = $request->input('id_jenis_rpp');
-            $tgl_rpp = $request->input('tgl_warta_rpp');
+            $id_jemaat = $request->input('id_jemaat');
+            $id_jenis_rpp = $request->input('id_jenis_rpp');
+            $tgl_warta_rpp = $request->input('tgl_warta_rpp');
             $keterangan = $request->input('keterangan');
 
-            $data = DB::statement('CALL updateRPP(?,?,?,?,?)',[$id_rpp,$jemaat,$tgl_rpp,$jenis_rpp,$keterangan]);
-        
-            if($data){
-                return ApiFormatter::createApi('200', 'Success', $data);
-                // $formatter = new ApiFormatter();
-                // return response()->json($formatter->format('User created successfully'), 201);
+            $dataRpp = json_encode([
+                'id_rpp' => $id_rpp,
+                'id_jemaat' => $id_jemaat,
+                'id_jenis_rpp' => $id_jenis_rpp,
+                'tgl_warta_rpp' => $tgl_warta_rpp,
+                'keterangan' => $keterangan,
+
+            ]);
+            $data = DB::statement('CALL updateRPPA(?, ?, ?, ?, ?)',[$id_rpp, $id_jemaat, $tgl_warta_rpp, $id_jenis_rpp, $keterangan]);
+
+            // return $dataRpp;
+            if(!$data){
+                return "store procedure ngga jalan";
             }
+            return ApiFormatter::createApi('200', 'Success', $data);
+                
         } catch (Exception $error) {
             return ApiFormatter::createApi('400', 'Failed');
         }
@@ -65,6 +74,15 @@ class RPPController extends Controller
     public function viewRPPById($id){
         $rpp = DB::select('CALL viewRPPById(?)',[$id]);
 
+        if($rpp){
+            return ApiFormatter::createApi('200', 'Success', $rpp);
+        }else{
+            return ApiFormatter::createApi('400', 'Failed');
+        }
+    }
+
+    public function viewEditRPP($id){
+        $rpp = DB::select('CALL viewEditRPP(?)',[$id]);
         if($rpp){
             return ApiFormatter::createApi('200', 'Success', $rpp);
         }else{
@@ -82,6 +100,5 @@ class RPPController extends Controller
             return ApiFormatter::createApi('400', 'Failed');
         }
     }
-
 
 }
