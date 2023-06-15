@@ -22,6 +22,7 @@ class userController extends Controller
                 'alamat' => 'required',
                 'keterangan' => 'required',
                 'jenis_kelamin' => 'required',
+                'id_user' => 'required',
             ]);
 
             $nama_lengkap = $request->input('nama_lengkap');
@@ -32,6 +33,7 @@ class userController extends Controller
             $jenis_kelamin = $request->input('jenis_kelamin');
             $alamat = $request->input('alamat');
             $keterangan = $request->input('keterangan');
+            $id_user = $request->input('id_user');
 
             $data = DB::table('registrasi_baptis')->insert([
                 'nama_lengkap' => $nama_lengkap,
@@ -41,7 +43,8 @@ class userController extends Controller
                 'tanggal_lahir' => $tanggal_lahir,
                 'jenis_kelamin' => $jenis_kelamin,
                 'alamat' => $alamat,
-                'keterangan' => $keterangan
+                'keterangan' => $keterangan,
+                'id_user' => $id_user
             ]);
 
             // $data = registrasi_baptis::where('id', '=', $registrasi_baptis->id_registrasi_baptis)->get();
@@ -73,6 +76,7 @@ class userController extends Controller
                 'nama_gereja_non_hkbp' => 'required',
                 'id_hub_keluarga' => 'required',
                 'keterangan' => 'required',
+                'id_user' => 'required',
             ]);
 
             $nama_lengkap = $request->input('nama_lengkap');
@@ -84,6 +88,7 @@ class userController extends Controller
             $nama_gereja_non_hkbp = $request->input('nama_gereja_non_hkbp');
             $id_hub_keluarga = $request->input('id_hub_keluarga');
             $keterangan = $request->input('keterangan');
+            $id_user = $request->input('id_user');
 
             $data = DB::table('registrasi_sidi')->insert([
                 'nama_lengkap' => $nama_lengkap,
@@ -94,7 +99,8 @@ class userController extends Controller
                 'id_gereja_sidi' => $id_gereja_sidi,
                 'nama_gereja_non_hkbp' => $nama_gereja_non_hkbp,
                 'id_hub_keluarga' => $id_hub_keluarga,
-                'keterangan' => $keterangan
+                'keterangan' => $keterangan,
+                'id_user' => $id_user
             ]);
 
             if($data){
@@ -120,7 +126,7 @@ class userController extends Controller
                 'jenis_kelamin' => 'required',
                 'gol_darah' => 'required',
                 'id_hub_keluarga' => 'required',
-                'id_status_pernikahan' => 'required',
+                // 'id_status_pernikahan' => 'required',
                 'id_pendidikan' => 'required',
                 'id_bidang_pendidikan' => 'required',
                 // 'id_bidang_pendidikan_lain' => 'required',
@@ -129,6 +135,7 @@ class userController extends Controller
                 'no_telepon' => 'required',
                 'alamat' => 'required',
                 'keterangan' => 'required',
+                'id_user' => 'required',
             ]);
 
             $nama_depan = $request->input('nama_depan');
@@ -140,7 +147,7 @@ class userController extends Controller
             $jenis_kelamin = $request->input('jenis_kelamin');
             $gol_darah = $request->input('gol_darah');
             $id_hub_keluarga = $request->input('id_hub_keluarga');
-            $id_status_pernikahan = $request->input('id_status_pernikahan');
+            // $id_status_pernikahan = $request->input('id_status_pernikahan');
             $id_pendidikan = $request->input('id_pendidikan');
             $id_bidang_pendidikan = $request->input('id_bidang_pendidikan');
             // $id_bidang_pendidikan_lain = $request->input('id_bidang_pendidikan_lain');
@@ -149,6 +156,7 @@ class userController extends Controller
             $alamat = $request->input('alamat');
             $nama_pekerjaan_lain = $request->input('nama_pekerjaan_lain');
             $keterangan = $request->input('keterangan');
+            $id_user = $request->input('id_user');
 
             $data = DB::table('jemaat')->insert([
                 'nama_depan' => $nama_depan,
@@ -160,7 +168,7 @@ class userController extends Controller
                 'jenis_kelamin' => $jenis_kelamin,
                 'gol_darah' => $gol_darah,
                 'id_hub_keluarga' => $id_hub_keluarga,
-                'id_status_pernikahan' => $id_status_pernikahan,
+                // 'id_status_pernikahan' => $id_status_pernikahan,
                 'id_pendidikan' => $id_pendidikan,
                 'id_bidang_pendidikan' => $id_bidang_pendidikan,
                 // 'id_bidang_pendidikan_lain' => $id_bidang_pendidikan_lain,
@@ -169,7 +177,8 @@ class userController extends Controller
                 'no_telepon' => $no_telepon,
                 'alamat' => $alamat,
                 'nama_pekerjaan_lain' => $nama_pekerjaan_lain,
-                'keterangan' => $keterangan
+                'keterangan' => $keterangan,
+                'id_user' => $id_user
             ]);
 
             if($data){
@@ -190,39 +199,48 @@ class userController extends Controller
                 'nama_gereja_martumpol' => 'required',
                 'tgl_pemberkatan' => 'required',
                 'nama_gereja_pemberkatan' => 'required',
+                'nama_lengkap_laki' => 'required',
                 'nama_gereja_laki' => 'required',
                 'nama_ayah_laki' => 'required',
                 'nama_ibu_laki' => 'required',
+                'nama_lengkap_perempuan' => 'required',
                 'nama_gereja_perempuan' => 'required',
                 'nama_ayah_perempuan' => 'required',
                 'nama_ibu_perempuan' => 'required',
                 'keterangan' => 'required',
+                'id_user' => 'required',
             ]);
 
             $tgl_martumpol = $request->input('tgl_martumpol');
             $nama_gereja_martumpol = $request->input('nama_gereja_martumpol');
             $tgl_pemberkatan = $request->input('tgl_pemberkatan');
             $nama_gereja_pemberkatan = $request->input('nama_gereja_pemberkatan');
+            $nama_lengkap_laki = $request->input('nama_lengkap_laki');
             $nama_gereja_laki = $request->input('nama_gereja_laki');
             $nama_ayah_laki = $request->input('nama_ayah_laki');
             $nama_ibu_laki = $request->input('nama_ibu_laki');
+            $nama_lengkap_perempuan = $request->input('nama_lengkap_perempuan');
             $nama_gereja_perempuan = $request->input('nama_gereja_perempuan');
             $nama_ayah_perempuan = $request->input('nama_ayah_perempuan');
             $nama_ibu_perempuan = $request->input('nama_ibu_perempuan');
             $keterangan = $request->input('keterangan');
+            $id_user = $request->input('id_user');
 
             $data = DB::table('registrasi_pernikahan')->insert([
                 'tgl_martumpol' => $tgl_martumpol,
                 'nama_gereja_martumpol' => $nama_gereja_martumpol,
                 'tgl_pemberkatan' => $tgl_pemberkatan,
                 'nama_gereja_pemberkatan' => $nama_gereja_pemberkatan,
+                'nama_lengkap_laki' => $nama_lengkap_laki,
                 'nama_gereja_laki' => $nama_gereja_laki,
                 'nama_ayah_laki' => $nama_ayah_laki,
                 'nama_ibu_laki' => $nama_ibu_laki,
+                'nama_lengkap_perempuan' => $nama_lengkap_perempuan,
                 'nama_gereja_perempuan' => $nama_gereja_perempuan,
                 'nama_ayah_perempuan' => $nama_ayah_perempuan,
                 'nama_ibu_perempuan' => $nama_ibu_perempuan,
-                'keterangan' => $keterangan
+                'keterangan' => $keterangan,
+                'id_user' => $id_user
             ]);
 
             // $data = registrasi_baptis::where('id', '=', $registrasi_baptis->id_registrasi_baptis)->get();
@@ -254,6 +272,7 @@ class userController extends Controller
                 'nama_ayah_perempuan' => 'required',
                 'nama_ibu_perempuan' => 'required',
                 'keterangan' => 'required',
+                'id_user' => 'required',
             ]);
 
             $nama_gereja_laki = $request->input('nama_gereja_laki');
@@ -265,6 +284,7 @@ class userController extends Controller
             $nama_ayah_perempuan = $request->input('nama_ayah_perempuan');
             $nama_ibu_perempuan = $request->input('nama_ibu_perempuan');
             $keterangan = $request->input('keterangan');
+            $id_user = $request->input('id_user');
 
             $data = DB::table('registrasi_calon_mempelai')->insert([
                 'nama_gereja_laki' => $nama_gereja_laki,
@@ -275,7 +295,8 @@ class userController extends Controller
                 'id_jemaat_perempuan' => $id_jemaat_perempuan,
                 'nama_ayah_perempuan' => $nama_ayah_perempuan,
                 'nama_ibu_perempuan' => $nama_ibu_perempuan,
-                'keterangan' => $keterangan
+                'keterangan' => $keterangan,
+                'id_user' => $id_user
             ]);
 
             // $data = registrasi_baptis::where('id', '=', $registrasi_baptis->id_registrasi_baptis)->get();
@@ -303,6 +324,7 @@ class userController extends Controller
                 'tgl_pindah' => 'required',
                 'nama_gereja' => 'required',
                 'keterangan' => 'required',
+                'id_user' => 'required',
             ]);
 
             $id_registrasi = $request->input('id_registrasi');
@@ -310,6 +332,7 @@ class userController extends Controller
             $tgl_pindah = $request->input('tgl_pindah');
             $nama_gereja = $request->input('nama_gereja');
             $keterangan = $request->input('keterangan');
+            $id_user = $request->input('id_user');
 
             $data = DB::table('head_pindah')->insert([
                 'id_registrasi' => $id_registrasi,
@@ -317,6 +340,7 @@ class userController extends Controller
                 'tgl_pindah' => $tgl_pindah,
                 'nama_gereja' => $nama_gereja,
                 'keterangan' => $keterangan,
+                'id_user' => $id_user,
             ]);
 
             if($data){

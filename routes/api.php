@@ -30,14 +30,11 @@ Route::get('rpp/{id}', [RPPController::class, 'viewRPPById']);
 Route::get('rppEdit/{id}', [RPPController::class, 'viewEditRPP']);
 Route::get('/deleteRpp/{id}', [RPPController::class, 'deleteRPP']);
 Route::post('/storeRpp', [RPPController::class, 'addRPP']);
-<<<<<<< HEAD
 Route::put('/updateRpp', [RPPController::class, 'updateRPP']);
-=======
 Route::put('/updateRpp/{id}', [RPPController::class, 'updateRPP']);
->>>>>>> 933d21a6445b56f4b86265daadb797f21c6c05d7
 
 
-Route::get('/pelayan', [PelayanController::class, 'viewAllPelayan']);
+// Route::get('/pelayan', [PelayanController::class, 'viewAllPelayan']);
 Route::get('/deletePelayan/{id}', [PelayanController::class, 'deleteRPP']);
 Route::get('pelayan/{id}', [PelayanController::class, 'viewPelayanById']);
 Route::post('/storePelayan', [PelayanController::class, 'addPelayan']);
@@ -77,20 +74,32 @@ Route::put('/ubahSentralisasi/{id}', [SetSentralisasiController::class, 'ubahSen
 
 // Route::get('/setSentralisasi', [SetSentralisasiController::class, 'detailSentralisasi']);
 
-Route::put('/uproveBaptis/{id}', [uproveController::class, 'statusBaptis']);
+Route::put('/uproveBaptis1/{id}', [uproveController::class, 'statusBaptis1']);
+Route::put('/uproveBaptis2/{id}', [uproveController::class, 'statusBaptis2']);
 Route::get('/baptis', [uproveController::class, 'baptis']);
+Route::get('/userBaptis', [uproveController::class, 'userBaptis']);
 
-Route::put('/uproveSidi/{id}', [uproveController::class, 'statusSidi']);
+Route::put('/uproveSidi1/{id}', [uproveController::class, 'statusSidi1']);
+Route::put('/uproveSidi2/{id}', [uproveController::class, 'statusSidi2']);
 Route::get('/sidi', [uproveController::class, 'sidi']);
+Route::get('/userSidi', [uproveController::class, 'userSidi']);
 
-Route::put('/uprovePindah/{id}', [uproveController::class, 'statusPindah']);
+Route::put('/uprovePindah1/{id}', [uproveController::class, 'statusPindah1']);
+Route::put('/uprovePindah2/{id}', [uproveController::class, 'statusPindah2']);
 Route::get('/pindah', [uproveController::class, 'pindah']);
+Route::get('/userPindah', [uproveController::class, 'userPindah']);
 
-Route::put('/uproveJemaat/{id}', [uproveController::class, 'statusJemaat']);
+Route::put('/uproveJemaat1/{id}', [uproveController::class, 'statusJemaat1']);
+Route::put('/uproveJemaat2/{id}', [uproveController::class, 'statusJemaat2']);
 Route::get('/prvJemaat', [uproveController::class, 'prvJemaat']);
+Route::get('/userPrvJemaat', [uproveController::class, 'userPrvJemaat']);
 
-Route::put('/uproveNikah/{id}', [uproveController::class, 'statusNikah']);
+Route::put('/uproveNikah1/{id}', [uproveController::class, 'statusNikah1']);
+Route::put('/uproveNikah2/{id}', [uproveController::class, 'statusNikah2']);
 Route::get('/nikah', [uproveController::class, 'nikah']);
+Route::get('/userNikah', [uproveController::class, 'userNikah']);
 
-Route::put('/uproveMartumpol/{id}', [uproveController::class, 'statusMartumpol']);
+Route::put('/uproveMartumpol1/{id}', [uproveController::class, 'statusMartumpol1']);
+Route::put('/uproveMartumpol2/{id}', [uproveController::class, 'statusMartumpol2']);
 Route::get('/martumpol', [uproveController::class, 'martumpol']);
+Route::get('/userMartumpol', [uproveController::class, 'userMartumpol']);
