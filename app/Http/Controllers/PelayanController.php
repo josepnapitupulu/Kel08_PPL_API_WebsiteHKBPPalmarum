@@ -9,12 +9,17 @@ use Illuminate\Support\Facades\DB;
 
 class PelayanController extends Controller
 {
-    
     public function viewAllPelayan(){
         $pelayan = DB::select('CALL viewAllPelayan()');
         
         if($pelayan){
             return ApiFormatter::createApi('200', 'Success', $pelayan);
+
+            // $response['code'] = '200';
+            // $response['message'] = 'success';
+            // $response['data'] = $pelayan;
+            
+        // return response()->json($response);
         }else {
             return ApiFormatter::createApi('400', 'Failed');
         }
@@ -51,7 +56,7 @@ class PelayanController extends Controller
             $tanggal_akhir_jawatan = $request->input('tanggal_akhir_jawatan');
             $keterangan = $request->input('keterangan');
 
-            $data = DB::statement('CALL updatePelayan(?,?,?,?,?,?)',[$id_pelayan,$id_jemaat,$tanggal_tahbisan,$jabatan,$tanggal_akhir_jawatan, $keterangan]);
+            $data = DB::statement('CALL updatePelayan(?, ?, ?, ?, ?, ?)',[$id_pelayan, $id_jemaat, $tanggal_tahbisan, $jabatan, $tanggal_akhir_jawatan, $keterangan]);
         
             if($data){
                 return ApiFormatter::createApi('200', 'Success', $data);

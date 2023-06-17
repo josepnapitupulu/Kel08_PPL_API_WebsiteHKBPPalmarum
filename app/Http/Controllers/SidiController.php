@@ -7,31 +7,31 @@ use Illuminate\Http\Request;
 use App\Helpers\ApiFormatter;
 use Illuminate\Support\Facades\DB;
 
-class BaptisController extends Controller
+class SidiController extends Controller
 {
-    public function viewAllBaptis(){
-        $baptis = DB::select('CALL viewAllRegistrasiBaptis()');
-        if($baptis){
-            return ApiFormatter::createApi('200', 'Success', $baptis);
+    public function viewAllSidi(){
+        $sidi = DB::select('CALL viewAllRegistrasiSidi()');
+        if($sidi){
+            return ApiFormatter::createApi('200', 'Success', $sidi);
         }else {
             return ApiFormatter::createApi('400', 'Failed');
         }
     }
 
-    public function addBaptis(Request $request){
+    public function addSidi(Request $request){
 
         try {
-            $data = DB::table('registrasi_baptis')->insert([
+            $data = DB::table('registrasi_sidi')->insert([
+                'nama_lengkap' => $request->nama_lengkap,
                 'nama_ayah' => $request->nama_ayah,
                 'nama_ibu' => $request->nama_ibu,
-                'nama_lengkap' => $request->nama_lengkap,
                 'tempat_lahir' => $request->tempat_lahir,
                 'tanggal_lahir' => $request->tanggal_lahir,
-                'alamat' => $request->alamat,
-                'tanggal_baptis' => $request->tanggal_baptis,
-                'jenis_kelamin' => $request->jenis_kelamin,
-                'id_pendeta' => $request->id_pendeta,
+                'nats_sidi' => $request->nats_sidi,
+                'nama_gereja_non_HKBP' => $request->nama_gereja_non_HKBP,
+                'nama_pendeta_sidi' => $request->nama_pendeta_sidi,
                 'keterangan' => $request->keterangan,
+                'tanggal_sidi' => $request->tanggal_sidi,
                 'status' => 1
             ]);
         
@@ -49,22 +49,22 @@ class BaptisController extends Controller
         }
     }
 
-    public function updateBaptis(Request $request){
+    public function updateSidi(Request $request){
         try {
-            $id_registrasi_baptis = $request->input('id_registrasi_baptis');
-            DB::table('registrasi_baptis')->where('id_registrasi_baptis', $request->id_registrasi_baptis)->update([
+            $id_registrasi_sidi = $request->id_registrasi_sidi;
+            $data = DB::table('registrasi_sidi')->where('id_registrasi_sidi', $request->id_registrasi_sidi)->update([
+                'nama_lengkap' => $request->nama_lengkap,
                 'nama_ayah' => $request->nama_ayah,
                 'nama_ibu' => $request->nama_ibu,
-                'nama_lengkap' => $request->nama_lengkap,
                 'tempat_lahir' => $request->tempat_lahir,
                 'tanggal_lahir' => $request->tanggal_lahir,
-                'alamat' => $request->alamat,
-                'tanggal_baptis' => $request->tanggal_baptis,
-                'jenis_kelamin' => $request->jenis_kelamin,
-                'id_pendeta' => $request->id_pendeta,
-                'keterangan' => $request->keterangan
+                'nats_sidi' => $request->nats_sidi,
+                'nama_gereja_non_HKBP' => $request->nama_gereja_non_HKBP,
+                'nama_pendeta_sidi' => $request->nama_pendeta_sidi,
+                'keterangan' => $request->keterangan,
+                'tanggal_sidi' => $request->tanggal_sidi
             ]);
-            $data = DB::statement('CALL updateRegistrasiBaptis(?)',[$id_registrasi_baptis]);
+            $data = DB::statement('CALL updateRegistrasiSidi(?)',[$id_registrasi_sidi]);
 
             // return $dataRpp;
             if(!$data){
@@ -77,28 +77,28 @@ class BaptisController extends Controller
         }
     }
 
-    public function viewBaptisById($id){
-        $baptis = DB::select('CALL viewRegistrasiBaptisById(?)',[$id]);
+    public function viewSidiById($id){
+        $sidi = DB::select('CALL viewRegistrasiSidiById(?)',[$id]);
 
-        if($baptis){
-            return ApiFormatter::createApi('200', 'Success', $baptis);
+        if($sidi){
+            return ApiFormatter::createApi('200', 'Success', $sidi);
         }else{
             return ApiFormatter::createApi('400', 'Failed');
         }
     }
 
-    public function viewEditBaptis($id){
-        $baptis = DB::select('CALL viewEditRegistrasiBaptis(?)',[$id]);
-        if($baptis){
-            return ApiFormatter::createApi('200', 'Success', $baptis);
+    public function viewEditSidi($id){
+        $sidi = DB::select('CALL viewEditRegistrasiSidi(?)',[$id]);
+        if($sidi){
+            return ApiFormatter::createApi('200', 'Success', $sidi);
         }else{
             return ApiFormatter::createApi('400', 'Failed');
         }
     }
 
-    public function deleteBaptis($id){
+    public function deleteSidi($id){
         
-        $sidi = DB::select('CALL deleteRegistrasiBaptis(?)',[$id]);
+        $sidi = DB::select('CALL deleteRegistrasiSidi(?)',[$id]);
 
         if($sidi){
             return ApiFormatter::createApi('200', 'Success');

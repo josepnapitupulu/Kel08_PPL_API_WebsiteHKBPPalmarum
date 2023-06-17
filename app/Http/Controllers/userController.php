@@ -452,7 +452,7 @@ class userController extends Controller
 
     public function jadwal()
     {
-        $data = DB::table('jadwal_ibadah')->get();
+        $data = DB::table('jadwal_ibadah')->where(['is_deleted' => 0])->get();
         return response()->json($data);
 
         if($data){
