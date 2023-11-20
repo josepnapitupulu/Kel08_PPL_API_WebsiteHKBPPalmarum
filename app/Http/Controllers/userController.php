@@ -20,7 +20,7 @@ class userController extends Controller
                 'tempat_lahir' => 'required',
                 'tanggal_lahir' => 'required',
                 'alamat' => 'required',
-                'keterangan' => 'required',
+                'keterangan' => '',
                 'jenis_kelamin' => 'required',
                 'id_user' => 'required',
             ]);
@@ -72,10 +72,10 @@ class userController extends Controller
                 'nama_ibu' => 'required',
                 'tempat_lahir' => 'required',
                 'tanggal_lahir' => 'required',
-                'id_gereja_sidi' => 'required',
-                'nama_gereja_non_hkbp' => 'required',
+                'id_gereja_sidi' => '',
+                'nama_gereja_non_hkbp' => '',
                 'id_hub_keluarga' => 'required',
-                'keterangan' => 'required',
+                'keterangan' => '',
                 'id_user' => 'required',
             ]);
 
@@ -116,27 +116,6 @@ class userController extends Controller
     public function daftarJemaat(Request $request)
     {
         try {
-            $request->validate([
-                'nama_depan' => 'required',
-                'nama_belakang' => 'required',
-                'gelar_depan' => 'required',
-                'gelar_belakang' => 'required',
-                'tempat_lahir' => 'required',
-                'tanggal_lahir' => 'required',
-                'jenis_kelamin' => 'required',
-                'gol_darah' => 'required',
-                'id_hub_keluarga' => 'required',
-                // 'id_status_pernikahan' => 'required',
-                'id_pendidikan' => 'required',
-                'id_bidang_pendidikan' => 'required',
-                // 'id_bidang_pendidikan_lain' => 'required',
-                'id_pekerjaan' => 'required',
-                'nama_pekerjaan_lain' => 'required',
-                'no_telepon' => 'required',
-                'alamat' => 'required',
-                'keterangan' => 'required',
-                'id_user' => 'required',
-            ]);
 
             $nama_depan = $request->input('nama_depan');
             $nama_belakang = $request->input('nama_belakang');
@@ -207,7 +186,7 @@ class userController extends Controller
                 'nama_gereja_perempuan' => 'required',
                 'nama_ayah_perempuan' => 'required',
                 'nama_ibu_perempuan' => 'required',
-                'keterangan' => 'required',
+                'keterangan' => '',
                 'id_user' => 'required',
             ]);
 
@@ -271,7 +250,7 @@ class userController extends Controller
                 'id_jemaat_perempuan' => 'required',
                 'nama_ayah_perempuan' => 'required',
                 'nama_ibu_perempuan' => 'required',
-                'keterangan' => 'required',
+                'keterangan' => '',
                 'id_user' => 'required',
             ]);
 
@@ -323,7 +302,7 @@ class userController extends Controller
                 'id_jemaat' => 'required',
                 'tgl_pindah' => 'required',
                 'nama_gereja' => 'required',
-                'keterangan' => 'required',
+                'keterangan' => '',
                 'id_user' => 'required',
             ]);
 
