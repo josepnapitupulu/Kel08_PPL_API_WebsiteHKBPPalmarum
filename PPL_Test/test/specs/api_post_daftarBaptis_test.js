@@ -2,8 +2,9 @@ import axios from 'axios';
 import assert from 'assert';
 
 describe('API Testing with WebDriverIO', () => {
+  const apiUrl = 'http://127.0.0.1:8070/api/daftarBaptis';
+
   it('should send a POST request and verify the response', async () => {
-    const apiUrl = 'http://127.0.0.1:8070/api/daftarBaptis';
     const postData = {
       nama_lengkap: 'Rashid',
       nama_ayah: 'Rara',
@@ -19,14 +20,12 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, '200'); // Sesuaikan dengan status yang sebenarnya
+      assert.equal(response.status, 200); 
 
-      // Sesuaikan properti ini dengan respons yang sebenarnya dari server
       assert.ok(response.data.message.includes('Success'));
-
     } catch (error) {
       console.error('Error during POST request:', error.message);
-      throw error; // Lepaskan kembali kesalahan untuk menunjukkan kegagalan tes
+      throw error;
     }
   });
 });
