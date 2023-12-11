@@ -4,7 +4,7 @@ import assert from 'assert';
 describe('API Testing with WebDriverIO', () => {
   const apiUrl = 'http://127.0.0.1:8070/api/daftarBaptis';
 
-  it('should send a POST request and verify the response', async () => {
+  it('Method Post dengan API untuk pendaftaran Baptis', async () => {
     const postData = {
       nama_lengkap: 'Rashid',
       nama_ayah: 'Rara',

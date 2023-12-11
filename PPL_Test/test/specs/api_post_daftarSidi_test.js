@@ -2,7 +2,7 @@ import axios from 'axios';
 import assert from 'assert';
 
 describe('API Testing with WebDriverIO', () => {
-  it('should send a POST request and verify the response', async () => {
+  it('Method Post dengan API untuk pendaftaran Sidi', async () => {
     const apiUrl = 'http://127.0.0.1:8070/api/daftarSidi';
     const postData = {
       nama_lengkap: 'Josua',

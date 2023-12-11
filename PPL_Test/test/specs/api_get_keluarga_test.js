@@ -6,7 +6,7 @@ describe('API Test', () => {
         this.timeout(5000);
     });
 
-    it('should return status code 200', async () => {
+    it('API test Get keluarga', async () => {
         try {
             const response = await axios.get('http://127.0.0.1:8070/api/keluarga');
             assert.strictEqual(response.status, 200);
