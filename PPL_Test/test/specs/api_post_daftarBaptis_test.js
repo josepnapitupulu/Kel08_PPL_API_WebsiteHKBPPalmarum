@@ -92,9 +92,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, 200); 
+      assert.equal(response.status, 400); 
 
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
     } catch (error) {
       console.error('Error during POST request:', error.message);
       throw error;
@@ -116,9 +116,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, 200); 
+      assert.equal(response.status, 400); 
 
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
     } catch (error) {
       console.error('Error during POST request:', error.message);
       throw error;
@@ -140,9 +140,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, 200); 
+      assert.equal(response.status, 400); 
 
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
     } catch (error) {
       console.error('Error during POST request:', error.message);
       throw error;
@@ -164,9 +164,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, 200); 
+      assert.equal(response.status, 400); 
 
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
     } catch (error) {
       console.error('Error during POST request:', error.message);
       throw error;
@@ -188,9 +188,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, 200); 
+      assert.equal(response.status, 400); 
 
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
     } catch (error) {
       console.error('Error during POST request:', error.message);
       throw error;

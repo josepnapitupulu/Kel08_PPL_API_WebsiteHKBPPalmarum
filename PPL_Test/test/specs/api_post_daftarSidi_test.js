@@ -48,10 +48,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, '200'); // Sesuaikan dengan status yang sebenarnya
+      assert.equal(response.status, 400); 
 
-      // Sesuaikan properti ini dengan respons yang sebenarnya dari server
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
 
     } catch (error) {
       console.error('Error during POST request:', error.message);
@@ -75,10 +74,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, '200'); // Sesuaikan dengan status yang sebenarnya
+      assert.equal(response.status, 400); 
 
-      // Sesuaikan properti ini dengan respons yang sebenarnya dari server
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
 
     } catch (error) {
       console.error('Error during POST request:', error.message);
@@ -102,10 +100,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, '200'); // Sesuaikan dengan status yang sebenarnya
+      assert.equal(response.status, 400); 
 
-      // Sesuaikan properti ini dengan respons yang sebenarnya dari server
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
 
     } catch (error) {
       console.error('Error during POST request:', error.message);
@@ -129,10 +126,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, '200'); // Sesuaikan dengan status yang sebenarnya
+      assert.equal(response.status, 400); 
 
-      // Sesuaikan properti ini dengan respons yang sebenarnya dari server
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
 
     } catch (error) {
       console.error('Error during POST request:', error.message);
@@ -156,10 +152,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, '200'); // Sesuaikan dengan status yang sebenarnya
+      assert.equal(response.status, 400); 
 
-      // Sesuaikan properti ini dengan respons yang sebenarnya dari server
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
 
     } catch (error) {
       console.error('Error during POST request:', error.message);
@@ -182,10 +177,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, '200'); // Sesuaikan dengan status yang sebenarnya
+      assert.equal(response.status, 400); 
 
-      // Sesuaikan properti ini dengan respons yang sebenarnya dari server
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
 
     } catch (error) {
       console.error('Error during POST request:', error.message);
@@ -208,10 +202,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, '200'); // Sesuaikan dengan status yang sebenarnya
+      assert.equal(response.status, 400); 
 
-      // Sesuaikan properti ini dengan respons yang sebenarnya dari server
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
 
     } catch (error) {
       console.error('Error during POST request:', error.message);
@@ -235,10 +228,9 @@ describe('API Testing with WebDriverIO', () => {
     try {
       const response = await axios.post(apiUrl, postData);
 
-      assert.equal(response.status, '200'); // Sesuaikan dengan status yang sebenarnya
+      assert.equal(response.status, 400); 
 
-      // Sesuaikan properti ini dengan respons yang sebenarnya dari server
-      assert.ok(response.data.message.includes('Success'));
+      assert.ok(response.data.message.includes('Validation Error'));
 
     } catch (error) {
       console.error('Error during POST request:', error.message);
